@@ -58,6 +58,13 @@ get('/ingredients/:id/edit') do
   erb(:ingredient_edit)
 end
 
+get('/ingredients/:id/delete') do
+  ingredient = Ingredient.find(params["id"].to_i)
+  @ingredients = Ingredient.all()
+  ingredient.destroy
+  erb(:ingredients)
+end
+
 patch('/ingredients') do
   description = params.fetch('description')
   id = params.fetch('id').to_i()
