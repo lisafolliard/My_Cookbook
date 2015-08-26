@@ -20,18 +20,6 @@ post('/recipes') do
   erb(:recipes)
 end
 
-get('/ingredients') do
-  @ingredients = Ingredient.all()
-  erb(:ingredients)
-end
-
-post('/ingredients') do
-  description = params.fetch('description')
-  ingredient = Ingredient.create({:description => description})
-  @ingredients = Ingredient.all()
-  erb(:ingredients)
-end
-
 get('/recipes/:id/edit') do
   @recipe = Recipe.find(params["id"].to_i)
   erb(:recipe_edit)
@@ -51,4 +39,30 @@ patch('/recipes') do
   recipe.update({:name => name})
   @recipes = Recipe.all()
   erb(:recipes)
+end
+
+get('/ingredients') do
+  @ingredients = Ingredient.all()
+  erb(:ingredients)
+end
+
+post('/ingredients') do
+  description = params.fetch('description')
+  ingredient = Ingredient.create({:description => description})
+  @ingredients = Ingredient.all()
+  erb(:ingredients)
+end
+
+get('/ingredients/:id/edit') do
+  @ingredient = Ingredient.find(params['id'].to_i)
+  erb(:ingredient_edit)
+end
+
+patch('/ingredients') do
+  description = params.fetch('description')
+  id = params.fetch('id').to_i()
+  ingredient = Ingredient.find(id)
+  ingredient.update({:description => description})
+  @ingredients = Ingredient.all()
+  erb(:ingredients)
 end
