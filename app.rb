@@ -37,6 +37,13 @@ get('/recipes/:id/edit') do
   erb(:recipe_edit)
 end
 
+get('/recipes/:id/delete') do
+  recipe = Recipe.find(params["id"].to_i)
+  @recipes = Recipe.all()
+  recipe.destroy
+  erb(:recipes)
+end
+
 patch('/recipes') do
   name = params.fetch("name")
   id = params.fetch("id").to_i()
