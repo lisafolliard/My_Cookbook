@@ -31,3 +31,17 @@ post('/ingredients') do
   @ingredients = Ingredient.all()
   erb(:ingredients)
 end
+
+get('/recipes/:id/edit') do
+  @recipe = Recipe.find(params["id"].to_i)
+  erb(:recipe_edit)
+end
+
+patch('/recipes') do
+  name = params.fetch("name")
+  id = params.fetch("id").to_i()
+  recipe = Recipe.find(id)
+  recipe.update({:name => name})
+  @recipes = Recipe.all()
+  erb(:recipes)
+end
