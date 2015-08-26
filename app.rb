@@ -1,7 +1,7 @@
 # Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 require("bundler/setup")
-Bundler.require(:default)
+Bundler.require(:default, :test)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get('/') do
@@ -41,6 +41,30 @@ patch('/recipes') do
   erb(:recipes)
 end
 
+get('/recipes/:id') do
+  @recipe = Recipe.find(params.fetch("id").to_i)
+  @ingredients = Ingredient.all()
+  erb(:recipe_info)
+end
+
+patch('/recipes/:id') do
+  recipe_id = params.fetch("id").to_i()
+  @recipe = Recipe.find(recipe_id)
+  ingredient_ids = params.fetch("ingredient_id")
+
+  # one method to add ingredients to @recipe
+  ingredient_ids.each() do |ingredient_id|
+    new_ingredient = Ingredient.find(ingredient_id)
+    @recipe.ingredients.push(new_ingredient)
+  end
+
+  # replace all ingredients for this @recipe
+  # @recipe.update({:ingredient_ids => ingredient_ids})
+
+  @ingredients = Ingredient.all()
+  erb(:recipe_info)
+end
+
 get('/ingredients') do
   @ingredients = Ingredient.all()
   erb(:ingredients)
@@ -73,3 +97,9 @@ patch('/ingredients') do
   @ingredients = Ingredient.all()
   erb(:ingredients)
 end
+
+# get('/ingredients/:id') do
+#   @ingredients = Ingredient.find(params.fetch("id").to_i)
+#   @recipe = Recipe.all()
+#   erb(:ingredient_info)
+# end
