@@ -17,4 +17,9 @@ describe(Ingredient) do
     ingredient = Ingredient.create({:description => ""})
     expect(ingredient.save()).to(eq(false))
   end
+
+  it('validates the length of description at most 15 characters') do
+    ingredient = Ingredient.new({:description => 'a'.*(16)})
+    expect(ingredient.save()).to(eq(false))
+  end
 end
