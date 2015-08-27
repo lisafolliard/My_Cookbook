@@ -1,0 +1,36 @@
+<h1><%= @ingredient.description() %></h1>
+
+<h3>Select all recipes that use this ingredient:</h3>
+
+<% if @recipes.any?() %>
+  <form action="/ingredients/<%= @ingredient.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+    <% @recipes.each() do |recipe| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="recipe_id[]" value=" <%= recipe.id() %>"><%= recipe.name() %>
+        </label>
+      </div>
+    <% end %>
+
+    <button type="submit">Add recipes!</button>
+  </form>
+<% end %>
+
+<br>
+
+<% if @ingredient.recipes().any?() %>
+<h3>Here are all the recipes that include this ingredient:</h3>
+
+<ul>
+  <% @ingredient.recipes().each() do |recipe| %>
+    <li><%= recipe.name() %></li>
+  <% end %>
+</ul>
+
+<% else %>
+  <p>I'm hungry but there are no recipes yet!</p>
+<% end %>
+
+<a href="/">Return to Cookbook Home</a>
