@@ -5,6 +5,6 @@ describe('path to view individual ingredient page', :type => :feature) do
     visit('/ingredients')
     fill_in('description', :with => 'tempeh')
     click_button('Add!')
-    expect(page).to have_content('tempeh')
+    expect(page).to have_content('Tempeh')
   end
 end

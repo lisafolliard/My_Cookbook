@@ -1,0 +1,15 @@
+.lscs-background {
+  background: url('pastagarlic.jpg') no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+.sadmilk {
+  background: url('sadmilk.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.jumbotron{
+  background: rgba(255, 254, 255, 0.6);
+
+}
