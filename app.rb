@@ -124,3 +124,5 @@ patch('/ingredients/:id') do
   @recipes = Recipe.all()
   erb(:ingredient_info)
 end
+
+#git commit hack
