@@ -3,9 +3,9 @@ class Recipe < ActiveRecord::Base
   validates(:name, :presence => true)
   before_save(:capitalize_letter)
 
-  scope(:not_tried, -> do
-    where({:tried => false})
-  end)
+  # scope(:not_tried, -> do
+  #   where({:tried => false})
+  # end)
 
   private
 

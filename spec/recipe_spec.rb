@@ -23,13 +23,13 @@ describe(Recipe) do
     expect(recipe.name).to(eq("Cinnamon toast crunch"))
   end
 
-  describe('.not_tried') do
-    it('returns the recipes that have not been tried') do
-      not_tried_recipe1 = Recipe.create({:name => 'ricotta pancakes', :tried => false})
-      not_tried_recipe2 = Recipe.create({:name => 'french fries', :tried => false})
-      not_tried_recipes = [not_tried_recipe1, not_tried_recipe2]
-      tried_recipe = Recipe.create({:name => 'nachos', :tried => true})
-      expect(Recipe.not_tried()).to(eq(not_tried_recipes))
-    end
-  end
+  # describe('.not_tried') do
+  #   it('returns the recipes that have not been tried') do
+  #     not_tried_recipe1 = Recipe.create({:name => 'ricotta pancakes', :tried => false})
+  #     not_tried_recipe2 = Recipe.create({:name => 'french fries', :tried => false})
+  #     not_tried_recipes = [not_tried_recipe1, not_tried_recipe2]
+  #     tried_recipe = Recipe.create({:name => 'nachos', :tried => true})
+  #     expect(Recipe.not_tried()).to(eq(not_tried_recipes))
+  #   end
+  # end
 end
