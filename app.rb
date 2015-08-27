@@ -1,5 +1,3 @@
-# Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
-
 require("bundler/setup")
 Bundler.require(:default, :test)
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
@@ -124,5 +122,3 @@ patch('/ingredients/:id') do
   @recipes = Recipe.all()
   erb(:ingredient_info)
 end
-
-#git commit hack
