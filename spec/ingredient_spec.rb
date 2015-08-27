@@ -22,4 +22,9 @@ describe(Ingredient) do
     ingredient = Ingredient.new({:description => 'a'.*(16)})
     expect(ingredient.save()).to(eq(false))
   end
+
+  it('capitalizes the first letter of an ingredient') do
+    ingredient = Ingredient.create({:description => 'cilantro'})
+    expect(ingredient.description).to(eq('Cilantro'))
+  end
 end
