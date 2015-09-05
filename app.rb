@@ -53,16 +53,10 @@ patch('/recipes/:id') do
   recipe_id = params.fetch("id").to_i()
   @recipe = Recipe.find(recipe_id)
   ingredient_ids = params.fetch("ingredient_id")
-
-  # one method to add ingredients to @recipe
   ingredient_ids.each() do |ingredient_id|
     new_ingredient = Ingredient.find(ingredient_id)
     @recipe.ingredients.push(new_ingredient)
   end
-
-  # replace all ingredients for this @recipe
-  # @recipe.update({:ingredient_ids => ingredient_ids})
-
   @ingredients = Ingredient.all()
   erb(:recipe_info)
 end

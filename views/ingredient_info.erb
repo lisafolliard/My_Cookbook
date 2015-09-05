@@ -13,22 +13,19 @@
         </label>
       </div>
     <% end %>
-
-    <button type="submit">Add recipes!</button>
+      <button type="submit">Add recipes!</button>
   </form>
 <% end %>
 
 <br>
 
 <% if @ingredient.recipes().any?() %>
-<h3>Here are all the recipes that include this ingredient:</h3>
-
-<ul>
-  <% @ingredient.recipes().each() do |recipe| %>
-    <li><%= recipe.name() %></li>
-  <% end %>
-</ul>
-
+  <h3>Here are all the recipes that include this ingredient:</h3>
+    <ul>
+      <% @ingredient.recipes().each() do |recipe| %>
+        <li><%= recipe.name() %></li>
+      <% end %>
+    </ul>
 <% else %>
   <p>I'm hungry but there are no recipes yet!</p>
 <% end %>

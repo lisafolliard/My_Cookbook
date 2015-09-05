@@ -21,14 +21,12 @@
 <br>
 
 <% if @recipe.ingredients().any?() %>
-<h3>Here are all the ingredients in this recipe:</h3>
-
-<ul>
-  <% @recipe.ingredients().each() do |ingredient| %>
-    <li><%= ingredient.description() %></li>
-  <% end %>
-</ul>
-
+  <h3>Here are all the ingredients in this recipe:</h3>
+    <ul>
+      <% @recipe.ingredients().each() do |ingredient| %>
+        <li><%= ingredient.description() %></li>
+      <% end %>
+    </ul>
 <% else %>
   <p>Uh-oh! There are no ingredients yet!</p>
 <% end %>
