@@ -3,7 +3,6 @@ class Ingredient < ActiveRecord::Base
   validates(:description, {:presence => true, :length => {:maximum => 15}})
   before_save(:capitalize_ingredient)
 
-
   private
     define_method(:capitalize_ingredient) do
       self.description=description().capitalize()

@@ -18,7 +18,7 @@ describe(Recipe) do
     expect(recipe.save()).to(eq(false))
   end
 
-  it("capitalizes the first letter of a recipe") do
+  it('capitalizes the first letter of a recipe') do
     recipe = Recipe.create({:name => "cinnamon toast crunch"})
     expect(recipe.name).to(eq("Cinnamon toast crunch"))
   end

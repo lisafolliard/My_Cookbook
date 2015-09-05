@@ -5,21 +5,17 @@
 <% if @ingredients.any?() %>
   <form action="/recipes/<%= @recipe.id %>" method="post">
     <input type="hidden" name="_method" value="patch">
-
-    <% @ingredients.each() do |ingredient| %>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.id() %>"><%= ingredient.description() %>
-        </label>
-      </div>
-    <% end %>
-
+      <% @ingredients.each() do |ingredient| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.id() %>"><%= ingredient.description() %>
+          </label>
+        </div>
+      <% end %>
     <button type="submit">Add ingredients!</button>
   </form>
 <% end %>
-
 <br>
-
 <% if @recipe.ingredients().any?() %>
   <h3>Here are all the ingredients in this recipe:</h3>
     <ul>
