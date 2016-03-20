@@ -1,6 +1,6 @@
 <h1><%= @ingredient.description() %></h1>
 
-<h3>Select all recipes that use this ingredient:</h3>
+<h4>Select recipes:</h4>
 
 <% if @recipes.any?() %>
   <form action="/ingredients/<%= @ingredient.id %>" method="post">
@@ -18,7 +18,7 @@
 <% end %>
 <br>
 <% if @ingredient.recipes().any?() %>
-  <h3>Here are all the recipes that include this ingredient:</h3>
+  <h4>Recipes that include this ingredient:</h4>
     <ul>
       <% @ingredient.recipes().each() do |recipe| %>
         <li><%= recipe.name() %></li>
@@ -28,4 +28,4 @@
   <p>I'm hungry but there are no recipes yet!</p>
 <% end %>
 
-<a href="/">Return to Cookbook Home</a>
+<a href="/">Return to Home</a>

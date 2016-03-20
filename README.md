@@ -2,37 +2,27 @@
 
 ##### Version 1.0, 27 August 2015
 
-#### A digital cookbook to store recipes and ingredients
-
 #### By Lisa Folliard
 
 ## Description
 
-Users can:
-
-  - Add, view, edit and delete recipes
-
-  - Add, view, edit and delete ingredients
-
-  - Add and display the list of ingredients in a recipe
-
-  - Add and display all recipes that use a particular ingredient
+A digital cookbook to store recipes and ingredients.
 
 ## Setup
 
 Clone this repository to your local system
 
-Utilize ActiveRecord to get database up and running
+Utilize Active Record to get database up and running
 
-run the following commands in project folder
+Run the following commands in your project folder:
 
-$ rake db:create
+* $ rake db:create
 
-$ rake db:migrate
+* $ rake db:migrate
 
-$ ruby app.rb
+* $ ruby app.rb
 
-go to localhost:4567 in your browser to open webapp
+Go to localhost:4567 in your web browser to open application
 
 ## Technologies Used
 
