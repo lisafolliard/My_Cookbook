@@ -2,7 +2,7 @@
 
 ##### Version 1.0, 27 August 2015
 
-##### A digital cookbook to store recipes and ingredients
+#### A digital cookbook to store recipes and ingredients
 
 #### By Lisa Folliard
 
