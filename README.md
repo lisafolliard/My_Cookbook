@@ -1,4 +1,4 @@
-# Recipe Box
+# My Cookbook
 
 ##### A digital cookbook to store recipes and ingredients, 8/27/2015
 
