@@ -1,6 +1,8 @@
 # My Cookbook
 
-##### A digital cookbook to store recipes and ingredients, 8/27/2015
+##### Version 1.0, 27 August 2015
+
+##### A digital cookbook to store recipes and ingredients
 
 #### By Lisa Folliard
 
