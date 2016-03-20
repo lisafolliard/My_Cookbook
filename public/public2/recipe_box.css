@@ -11,5 +11,10 @@
 
 .jumbotron{
   background: rgba(255, 254, 255, 0.6);
+  padding: 30px;
+}
 
+h1 {
+  font-family: 'Pacifico', cursive;
+  padding-bottom: 30px;
 }
