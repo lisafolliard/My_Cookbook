@@ -1,3 +1,4 @@
+<div class='container'>
 <h1><%= @recipe.name() %></h1>
 
 <h4>Select ingredients:</h4>
@@ -12,7 +13,7 @@
           </label>
         </div>
       <% end %>
-    <button type="submit">Add ingredients!</button>
+    <button type="submit" class='btn btn-danger btn-md'>Add</button>
   </form>
 <% end %>
 <br>
@@ -26,5 +27,7 @@
 <% else %>
   <p>Uh-oh! There are no ingredients yet!</p>
 <% end %>
-
+<br>
 <a href="/">Return to Home</a>
+
+</div>

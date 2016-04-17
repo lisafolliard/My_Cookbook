@@ -1,31 +1,30 @@
 <body class="lfcs-background">
-
   <div class="container">
     <h2>Ingredients</h2>
     <p></p>
       <form action="/ingredients" method="post">
         <div class="form-group">
-          <label for="description">Add a new ingredient:</label>
+          <!-- <label for="description">Add a new ingredient:</label> -->
           <input type="text" class="form-control" name="description" placeholder="e.g. onions">
         </div>
-          <button type="submit" class="btn btn-primary btn-md">Add!</button>
+          <button type="submit" class="btn btn-danger btn-md">Add</button>
       </form>
+    </br>
+    <table class="table">
+      <tr>
+        <th>Ingredient Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+        <% if @ingredients %>
+          <% @ingredients.each do |ingredient| %>
+            <tr>
+              <td><a href="/ingredients/<%= ingredient.id %>"><%= ingredient.description %></a></td>
+              <td><a href="/ingredients/<%= ingredient.id %>/edit">Edit</a></td>
+              <td><a href="/ingredients/<%= ingredient.id %>/delete">Delete</a></td>
+            </tr>
+          <% end %>
+        <% end %>
+    </table>
   </div>
 </body>
-</br>
-<table class="table">
-  <tr>
-    <th>Ingredient Name</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </tr>
-    <% if @ingredients %>
-      <% @ingredients.each do |ingredient| %>
-        <tr>
-          <td><a href="/ingredients/<%= ingredient.id %>"><%= ingredient.description %></a></td>
-          <td><a href="/ingredients/<%= ingredient.id %>/edit">Edit</a></td>
-          <td><a href="/ingredients/<%= ingredient.id %>/delete">Delete</a></td>
-        </tr>
-      <% end %>
-    <% end %>
-</table>

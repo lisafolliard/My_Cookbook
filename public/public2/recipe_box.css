@@ -4,6 +4,29 @@
   text-align: center;
 }
 
+.lfcs-background {
+  background: url('pastagarlic.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  background-color: #ffffff;
+  /*margin-top: 50px;*/
+  /*margin-right: 20%;*/
+  /*margin-left: 20%;*/
+
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  padding-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+h2, h4, a, th {
+  font-family: font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+}
+
 .sadmilk {
   background: url('sadmilk.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -11,10 +34,5 @@
 
 .jumbotron{
   background: rgba(255, 254, 255, 0.6);
-  padding: 30px;
-}
-
-h1 {
-  font-family: 'Pacifico', cursive;
-  padding-bottom: 30px;
+  /*padding: 30px;*/
 }
