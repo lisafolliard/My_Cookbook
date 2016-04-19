@@ -29,10 +29,10 @@ Go to localhost:4567 in your web browser to open application
 * Ruby
 * HTML
 * CSS
-* Sinatra
-* Postgres
-* SQL
+* PostgreSQL
 * Active Record
+* Sinatra
+* RSpec
 
 ### Legal
 
