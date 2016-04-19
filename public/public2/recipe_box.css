@@ -11,9 +11,7 @@
 
 .container {
   background-color: #ffffff;
-  /*margin-top: 50px;*/
-  /*margin-right: 20%;*/
-  /*margin-left: 20%;*/
+  margin-bottom: 20px;
 
 }
 
@@ -23,8 +21,13 @@ h1 {
   letter-spacing: 2px;
 }
 
-h2, h4, a, th {
-  font-family: font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+h4 {
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
+}
+
+h2, li, .table, .checkbox {
+  /*font-family: Georgia;*/
+  font-family: Calibri, Candara, Segoe, 'Segoe UI', Optima, Arial, sans-serif;
 }
 
 .sadmilk {

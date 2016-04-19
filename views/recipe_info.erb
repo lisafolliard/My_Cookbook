@@ -1,33 +1,30 @@
-<div class='container'>
-<h1><%= @recipe.name() %></h1>
-
-<h4>Select ingredients:</h4>
-
-<% if @ingredients.any?() %>
-  <form action="/recipes/<%= @recipe.id %>" method="post">
-    <input type="hidden" name="_method" value="patch">
-      <% @ingredients.each() do |ingredient| %>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.id() %>"><%= ingredient.description() %>
-          </label>
-        </div>
+<body class="lfcs-background">
+  <div class='container'>
+    <h1><%= @recipe.name() %></h1>
+    <h4>Select ingredients:</h4>
+      <% if @ingredients.any?() %>
+        <form action="/recipes/<%= @recipe.id %>" method="post">
+          <input type="hidden" name="_method" value="patch">
+            <% @ingredients.each() do |ingredient| %>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="ingredient_id[]" value="<%= ingredient.id() %>"><%= ingredient.description() %>
+                </label>
+              </div>
+            <% end %>
+          <button type="submit" class='btn btn-danger btn-md'>Add</button>
+        </form>
       <% end %>
-    <button type="submit" class='btn btn-danger btn-md'>Add</button>
-  </form>
-<% end %>
-<br>
-<% if @recipe.ingredients().any?() %>
-  <h4>Ingredients in this recipe:</h4>
-    <ul>
-      <% @recipe.ingredients().each() do |ingredient| %>
-        <li><%= ingredient.description() %></li>
+      <br>
+      <% if @recipe.ingredients().any?() %>
+        <h4>Ingredients in this recipe:</h4>
+          <ul>
+            <% @recipe.ingredients().each() do |ingredient| %>
+              <li><%= ingredient.description() %></li>
+            <% end %>
+          </ul>
+      <% else %>
+        <p>Uh-oh! There are no ingredients yet!</p>
       <% end %>
-    </ul>
-<% else %>
-  <p>Uh-oh! There are no ingredients yet!</p>
-<% end %>
-<br>
-<a href="/">Return to Home</a>
-
+  </div>
 </div>

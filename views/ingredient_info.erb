@@ -1,31 +1,33 @@
-<h1><%= @ingredient.description() %></h1>
+<body class="lfcs-background">
+  <div class="container">
+    <h1><%= @ingredient.description() %></h1>
 
-<h4>Select recipes:</h4>
+    <h4>Select recipes:</h4>
 
-<% if @recipes.any?() %>
-  <form action="/ingredients/<%= @ingredient.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
+    <% if @recipes.any?() %>
+      <form action="/ingredients/<%= @ingredient.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
 
-    <% @recipes.each() do |recipe| %>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" name="recipe_id[]" value=" <%= recipe.id() %>"><%= recipe.name() %>
-        </label>
-      </div>
+        <% @recipes.each() do |recipe| %>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="recipe_id[]" value=" <%= recipe.id() %>"><%= recipe.name() %>
+            </label>
+          </div>
+        <% end %>
+          <button type="submit" class='btn btn-danger btn-md'>Add</button>
+      </form>
     <% end %>
-      <button type="submit" class='btn btn-danger btn-md'>Add</button>
-  </form>
-<% end %>
-<br>
-<% if @ingredient.recipes().any?() %>
-  <h4>Recipes that include this ingredient:</h4>
-    <ul>
-      <% @ingredient.recipes().each() do |recipe| %>
-        <li><%= recipe.name() %></li>
-      <% end %>
-    </ul>
-<% else %>
-  <p>I'm hungry but there are no recipes yet!</p>
-<% end %>
-<br>
-<a href="/">Return to Home</a>
+    <br>
+    <% if @ingredient.recipes().any?() %>
+      <h4>Recipes that include this ingredient:</h4>
+        <ul>
+          <% @ingredient.recipes().each() do |recipe| %>
+            <li><%= recipe.name() %></li>
+          <% end %>
+        </ul>
+    <% else %>
+      <p>I'm hungry but there are no recipes yet!</p>
+    <% end %>
+  </div>
+</div>
