@@ -1,6 +1,6 @@
 # My Cookbook
 
-##### Version 1.0, 27 August 2015
+##### August 27, 2015
 
 #### By Lisa Folliard
 
