@@ -2,7 +2,7 @@
 
 ##### August 27, 2015
 
-#### By Lisa Folliard
+#### By _**Lisa Folliard**_
 
 ## Description
 
@@ -29,6 +29,7 @@ Go to localhost:4567 in your web browser to open application
 * Ruby
 * HTML
 * CSS
+* Bootstrap
 * PostgreSQL
 * Active Record
 * Sinatra
