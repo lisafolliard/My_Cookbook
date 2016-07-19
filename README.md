@@ -2,7 +2,7 @@
 
 ##### August 27, 2015
 
-#### By _**Lisa Folliard**_
+#### By _**Lisa Folliard & Corrie Smith**_
 
 ## Description
 
@@ -10,7 +10,7 @@ A digital cookbook to store recipes and ingredients.
 
 ## Setup
 
-Clone this repository to your local system
+Clone this repository to your local system and navigate into project folder
 
 Utilize Active Record to get database up and running
 
@@ -37,7 +37,7 @@ Go to localhost:4567 in your web browser to open application
 
 ### Legal
 
-Copyright (c) 2015 Lisa Folliard
+Copyright (c) 2015 Lisa Folliard & Corrie Smith
 
 This software is licensed under the MIT license.
 
